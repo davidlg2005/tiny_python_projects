@@ -19,15 +19,15 @@ def test_runnable():
     """Runs using python3"""
 
     out = getoutput(f'python3 {prg}')
-    assert out.strip() == 'Hello, World!'
+    assert out.strip() == '01_Hello, World!'
 
 
 # --------------------------------------------------
 def test_executable():
-    """Says 'Hello, World!' by default"""
+    """Says '01_Hello, World!' by default"""
 
     out = getoutput(prg)
-    assert out.strip() == 'Hello, World!'
+    assert out.strip() == '01_Hello, World!'
 
 
 # --------------------------------------------------
@@ -48,4 +48,4 @@ def test_input():
         for option in ['-n', '--name']:
             rv, out = getstatusoutput(f'{prg} {option} {val}')
             assert rv == 0
-            assert out.strip() == f'Hello, {val}!'
+            assert out.strip() == f'01_Hello, {val}!'
